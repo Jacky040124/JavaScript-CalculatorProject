@@ -1,0 +1,44 @@
+.Calculator-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px,auto) repeat (5,100px);
+}
+
+/* Targetting Calculator-grid -> button */
+.Calculator-grid button {
+  cursor:pointer;
+  background-color: rgba(178, 235, 242, 0.75);
+  height: 100px;
+}
+
+.Calculator-grid button:hover {
+  background-color: rgba(178, 235, 242, 0.25);
+}
+
+.wide_buttons {
+  grid-column: span 2;
+}
+
+.display_screen {
+  grid-column: 1 / -1;
+  background-color: rgba(0,0,0,0.75);
+  padding: 10px; /* 10px of space added to all sides of the element */
+  /* start at first box on the left and stretch all the way to the last box at the right */
+  display: flex;
+
+  flex-direction: column; /* main aixs to vertical*/
+  align-items: flex-end; /* items to the end of the box */
+  justify-content: space-between; /* spaces between items */
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.display_screen .previous-operand {
+  color: rgba(255, 255, 255, .75);
+  font-size: 1.5rem;
+}
+
+.display_screen .current-operand {
+  color: white;
+  font-size: 2.5rem;
+}
